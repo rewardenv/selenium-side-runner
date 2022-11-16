@@ -14,11 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        docker_base_images: [""]
-        latest_tag: ["false"]
-        include:
-          - docker_base_images: "alpine:latest"
-            latest_tag: "true"
+        docker_base_images: "alpine:latest"
+        latest_tag: "true"
     steps:
       - uses: actions/checkout@v1
       - run: bash ./scripts/build.sh
